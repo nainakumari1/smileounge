@@ -1,0 +1,62 @@
+<%- include('partials/head') %>
+<%- include('partials/header') %>
+
+<section class="page-hero">
+  <div class="blob b1"></div>
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / <span>About Us</span></nav>
+    <h1 class="reveal">About The Smile Lounge</h1>
+    <p class="lead reveal d1">A full-service, well-equipped dental clinic in Vivek Vihar Phase-2 with an expert team and a focus on orthodontics.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap split">
+    <div class="reveal">
+      <%- visual('clinic-1', 'Reception and treatment area at The Smile Lounge Dental Clinic', 'landscape', { icon: 'tooth' }) %>
+    </div>
+    <div class="reveal d1">
+      <span class="eyebrow">Our clinic</span>
+      <h2>Care that feels like a lounge, not a waiting room</h2>
+      <p>The Smile Lounge is a full-service dental clinic specialising in orthodontic treatment, including tooth-colour braces, lingual braces and Invisalign. We also offer implants, ultrasonic scaling and polishing, root canal treatment, crowns and bridges, laminates, veneers, flexible dentures, teeth whitening, extractions and impactions.</p>
+      <p>Patients on Justdial describe our staff as friendly and polite, and the clinic holds a <strong><%= site.justdial.rating %>/5</strong> rating from <strong><%= site.justdial.count %></strong> ratings there.</p>
+      <ul class="ticks">
+        <li><%- icon('check') %> Digital X-ray for clear diagnosis</li>
+        <li><%- icon('check') %> Laser dentistry listed among our treatments</li>
+        <li><%- icon('check') %> Open Monday–Sunday, morning and evening</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="section tint">
+  <div class="wrap split rev">
+    <div class="reveal d1">
+      <span class="eyebrow">Meet the doctor</span>
+      <h2><%= site.doctor.name %></h2>
+      <p class="muted"><%= site.doctor.title %></p>
+      <p><%= site.doctor.name %> has <strong><%= site.doctor.experience %> years</strong> of experience in dentistry and leads the clinic’s orthodontic, implant and cosmetic work. His qualifications are listed as <%= site.doctor.degrees %>.</p>
+      <h3 class="mini">Credentials</h3>
+      <ul class="ticks">
+        <li><%- icon('check') %> <%= site.doctor.registration %></li>
+        <% site.doctor.memberships.forEach(function (m) { %><li><%- icon('check') %> Member: <%= m %></li><% }) %>
+      </ul>
+    </div>
+    <div class="reveal">
+      <%- visual('doctor-ankur-garg', 'Dr. Ankur Garg, orthodontist and implantologist', 'portrait', { icon: 'tooth' }) %>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="eyebrow">What we stand for</span><h2>Our promise to every patient</h2></div>
+    <div class="grid g3">
+      <article class="card reveal"><div class="ico"><%- icon('shield') %></div><h3>Honest advice</h3><p>We explain your options, and tell you if a treatment is not right for you.</p></article>
+      <article class="card reveal d1"><div class="ico"><%- icon('heart') %></div><h3>Comfortable visits</h3><p>A friendly team and a calm space to put you at ease, whatever your age.</p></article>
+      <article class="card reveal d2"><div class="ico"><%- icon('sparkle') %></div><h3>Natural results</h3><p>Treatment planned around your face, bite and what you want from your smile.</p></article>
+    </div>
+  </div>
+</section>
+
+<%- include('partials/footer') %>

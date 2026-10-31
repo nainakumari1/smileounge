@@ -1,0 +1,48 @@
+<%- include('partials/head') %>
+<%- include('partials/header') %>
+
+<section class="page-hero">
+  <div class="blob b1"></div>
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / <span>Contact Us</span></nav>
+    <h1 class="reveal">Contact &amp; Book an Appointment</h1>
+    <p class="lead reveal d1">Call us or message on WhatsApp. We’ll find a time that suits you.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap contact-grid">
+    <div>
+      <div class="info-card reveal">
+        <div class="info-row"><%- icon('pin') %><div><h3>Address</h3><p><%= site.address.line1 %>,<br><%= site.address.line2 %>,<br><%= site.address.city %> – <%= site.address.postal %></p></div></div>
+        <div class="info-row"><%- icon('phone') %><div><h3>Phone &amp; WhatsApp</h3><p><a href="tel:<%= site.phone.tel %>"><%= site.phone.display %></a></p></div></div>
+        <div class="info-row"><%- icon('clock') %><div><h3>Timings</h3><p><%= site.hours.days %><br><%= site.hours.sessions[0] %><br><%= site.hours.sessions[1] %></p><small class="muted">Timings may change on public holidays. Please confirm on WhatsApp.</small></div></div>
+      </div>
+      <div class="contact-btns reveal">
+        <a class="btn btn-book btn-lg pulse" href="<%= waLink() %>" target="_blank" rel="noopener"><%- icon('whatsapp') %> Book on WhatsApp</a>
+        <a class="btn btn-call btn-lg" href="tel:<%= site.phone.tel %>"><%- icon('phone') %> Call now</a>
+      </div>
+    </div>
+
+    <form class="form reveal d1" id="wa-form" action="<%= waLink() %>" method="get" target="_blank" aria-label="Appointment request">
+      <h2>Request an appointment</h2>
+      <p class="muted">Fill this in and we’ll open WhatsApp with your message ready to send.</p>
+      <label>Your name<input type="text" id="f-name" name="name" autocomplete="name" required></label>
+      <label>What do you need?
+        <select id="f-service">
+          <option>General check-up</option>
+          <% site.services.forEach(function (s) { %><option><%= s.title %></option><% }) %>
+        </select>
+      </label>
+      <label>Preferred day &amp; time<input type="text" id="f-time" placeholder="e.g. Tuesday evening"></label>
+      <button class="btn btn-book btn-lg pulse" type="submit"><%- icon('whatsapp') %> Send on WhatsApp</button>
+    </form>
+  </div>
+
+  <div class="wrap" style="margin-top:56px">
+    <div class="sec-head reveal"><span class="eyebrow">Find us</span><h2>Location on Google Maps</h2></div>
+    <%- include('partials/mapblock') %>
+  </div>
+</section>
+
+<%- include('partials/footer') %>

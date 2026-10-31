@@ -1,0 +1,39 @@
+<%- include('partials/head') %>
+<%- include('partials/header') %>
+
+<section class="page-hero">
+  <div class="blob b1"></div>
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / <span>Reviews</span></nav>
+    <h1 class="reveal">Patient Reviews</h1>
+    <p class="lead reveal d1">See what patients say about The Smile Lounge on Google and Justdial.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="rating-card reveal">
+      <div class="big-rate"><b class="count" data-to="<%= site.justdial.rating %>" data-dec="1">0</b><span>/ 5</span></div>
+      <div class="stars" aria-label="Rated <%= site.justdial.rating %> out of 5">★★★★★</div>
+      <p>Based on <strong><%= site.justdial.count %></strong> ratings on Justdial</p>
+      <div class="rating-btns">
+        <a class="btn btn-call" href="<%= site.justdialLink %>" target="_blank" rel="noopener">See on Justdial</a>
+        <a class="btn btn-ghost-dark" href="<%= site.practoLink %>" target="_blank" rel="noopener">See on Practo</a>
+      </div>
+    </div>
+
+    <div class="sec-head reveal"><span class="eyebrow">Google reviews</span><h2>Live ratings from Google</h2>
+      <p>The map below is Google’s own listing, so the rating and every review shown there is up to date.</p></div>
+
+    <% if (site.reviewsWidgetHtml && site.reviewsWidgetHtml.trim()) { %><div class="reviews-widget reveal"><%- site.reviewsWidgetHtml %></div><% } %>
+    <%- include('partials/mapblock') %>
+
+    <div class="review-cta reveal">
+      <h3>Treated at The Smile Lounge?</h3>
+      <p>Your feedback helps other families find a dentist they can trust.</p>
+      <a class="btn btn-book pulse" href="<%= site.mapsLink %>" target="_blank" rel="noopener"><%- icon('star') %> Leave a Google review</a>
+    </div>
+  </div>
+</section>
+
+<%- include('partials/footer') %>

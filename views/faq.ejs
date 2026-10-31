@@ -1,0 +1,29 @@
+<%- include('partials/head') %>
+<%- include('partials/header') %>
+
+<section class="page-hero">
+  <div class="blob b1"></div>
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / <span>FAQs</span></nav>
+    <h1 class="reveal">Frequently Asked Questions</h1>
+    <p class="lead reveal d1">Quick answers about visiting The Smile Lounge.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap narrow">
+    <% site.faqs.forEach(function (f, i) { %>
+      <details class="faq reveal" <%= i === 0 ? 'open' : '' %>>
+        <summary><%= f.q %></summary>
+        <p><%= f.a %></p>
+      </details>
+    <% }) %>
+    <div class="review-cta reveal">
+      <h3>Still have a question?</h3>
+      <p>Ask us directly. We usually reply fastest on WhatsApp.</p>
+      <a class="btn btn-book pulse" href="<%= waLink('Hello The Smile Lounge, I have a question.') %>" target="_blank" rel="noopener"><%- icon('whatsapp') %> Ask on WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<%- include('partials/footer') %>

@@ -1,0 +1,10 @@
+<div class="map-card reveal">
+  <iframe
+    title="The Smile Lounge Dental Clinic on Google Maps"
+    src="https://maps.google.com/maps?q=<%= encodeURIComponent('The Smile Lounge Dental Clinic, A-86 Vivek Vihar Phase 2, Delhi 110095') %>&ll=<%= site.geo.lat %>,<%= site.geo.lng %>&z=16&output=embed&hl=en"
+    width="100%" height="420" style="border:0" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe>
+  <div class="map-actions">
+    <a class="btn btn-call" href="<%= site.mapsLink %>" target="_blank" rel="noopener"><%- icon('pin') %> Get directions</a>
+    <a class="btn btn-ghost-dark" href="<%= site.mapsLink %>" target="_blank" rel="noopener"><%- icon('star') %> Read Google reviews</a>
+  </div>
+</div>

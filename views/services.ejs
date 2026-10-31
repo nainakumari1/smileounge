@@ -1,0 +1,45 @@
+<%- include('partials/head') %>
+<%- include('partials/header') %>
+
+<section class="page-hero">
+  <div class="blob b1"></div>
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / <span>Services</span></nav>
+    <h1 class="reveal">Our Dental Services</h1>
+    <p class="lead reveal d1">Orthodontics, implants, cosmetic dentistry and everyday care at The Smile Lounge, Vivek Vihar.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="chips reveal" aria-label="Jump to a service">
+      <% site.services.forEach(function (s) { %><a href="#<%= s.id %>"><%= s.label %></a><% }) %>
+    </div>
+
+    <div class="svc-list">
+      <% site.services.forEach(function (s, i) { %>
+        <article class="svc-row reveal" id="<%= s.id %>">
+          <div class="ico big"><%- icon(s.icon) %></div>
+          <div>
+            <h2><%= s.title %></h2>
+            <p><%= s.body %></p>
+            <a class="btn btn-book pulse-soft" href="<%= waLink('Hello The Smile Lounge, I would like to book an appointment for: ' + s.title) %>" target="_blank" rel="noopener"><%- icon('whatsapp') %> Book this on WhatsApp</a>
+          </div>
+        </article>
+      <% }) %>
+    </div>
+  </div>
+</section>
+
+<section class="section tint">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="eyebrow">In the clinic</span><h2>Diagnostic &amp; support facilities</h2></div>
+    <div class="grid g2">
+      <% site.facilities.forEach(function (f, i) { %>
+        <article class="card reveal d<%= i %>"><div class="ico"><%- icon('check') %></div><h3><%= f.title %></h3><p><%= f.text %></p></article>
+      <% }) %>
+    </div>
+  </div>
+</section>
+
+<%- include('partials/footer') %>

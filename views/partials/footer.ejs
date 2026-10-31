@@ -1,0 +1,59 @@
+</main>
+
+<section class="cta-band reveal">
+  <div class="wrap cta-in">
+    <div>
+      <h2>Ready for a smile you love?</h2>
+      <p>Message us on WhatsApp with your preferred day and time, or call the clinic directly.</p>
+    </div>
+    <div class="cta-btns">
+      <a class="btn btn-book btn-lg pulse" href="<%= waLink() %>" target="_blank" rel="noopener"><%- icon('whatsapp') %> Book on WhatsApp</a>
+      <a class="btn btn-ghost btn-lg" href="tel:<%= site.phone.tel %>"><%- icon('phone') %> Call <%= site.phone.display %></a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap foot-grid">
+    <div>
+      <a class="brand brand-light" href="/"><img src="/images/logo.svg" alt="" width="44" height="44" loading="lazy"><span class="brand-text"><strong>The Smile Lounge</strong><small>Dental Clinic · Vivek Vihar</small></span></a>
+      <p class="foot-about">Orthodontics, implants, smile designing and everyday dental care in Vivek Vihar Phase-2, Delhi.</p>
+    </div>
+    <div>
+      <h3>Explore</h3>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/about">About Us</a></li>
+        <li><a href="/services">Services</a></li>
+        <li><a href="/reviews">Reviews</a></li>
+        <li><a href="/faq">FAQs</a></li>
+        <li><a href="/contact">Contact Us</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3>Visit us</h3>
+      <address>
+        <%= site.address.line1 %>,<br><%= site.address.line2 %>,<br><%= site.address.city %> – <%= site.address.postal %>
+      </address>
+      <p><a href="<%= site.mapsLink %>" target="_blank" rel="noopener">Open in Google Maps</a></p>
+    </div>
+    <div>
+      <h3>Timings</h3>
+      <p><%= site.hours.days %><br><%= site.hours.sessions[0] %><br><%= site.hours.sessions[1] %></p>
+      <p><a href="tel:<%= site.phone.tel %>"><%= site.phone.display %></a></p>
+    </div>
+  </div>
+  <div class="wrap foot-bottom">
+    <span>© <%= year %> The Smile Lounge Dental Clinic. All rights reserved.</span>
+  </div>
+</footer>
+
+<div class="mbar" role="group" aria-label="Quick contact">
+  <a class="mbar-call" href="tel:<%= site.phone.tel %>"><%- icon('phone') %> Call</a>
+  <a class="mbar-book pulse" href="<%= waLink() %>" target="_blank" rel="noopener"><%- icon('whatsapp') %> Book on WhatsApp</a>
+</div>
+<a class="wa-float pulse" href="<%= waLink() %>" target="_blank" rel="noopener" aria-label="Book on WhatsApp"><%- icon('whatsapp') %></a>
+
+<script src="/js/main.js?v=<%= site.version %>" defer></script>
+</body>
+</html>

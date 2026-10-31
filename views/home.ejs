@@ -1,0 +1,121 @@
+<%- include('partials/head') %>
+<%- include('partials/header') %>
+
+<section class="hero">
+  <div class="blob b1"></div><div class="blob b2"></div>
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <span class="chip reveal"><%- icon('star') %> Rated <%= site.justdial.rating %>/5 on Justdial · <%= site.justdial.count %> ratings</span>
+      <h1 class="reveal d1">A smile you’ll <em>love to show</em>, in Vivek Vihar.</h1>
+      <p class="lead reveal d2">The Smile Lounge is a full-service dental clinic specialising in orthodontics, implants and smile designing. Led by Dr. Ankur Garg with 19+ years of experience.</p>
+      <div class="hero-btns reveal d3">
+        <a class="btn btn-book btn-lg pulse" href="<%= waLink() %>" target="_blank" rel="noopener"><%- icon('whatsapp') %> Book on WhatsApp</a>
+        <a class="btn btn-call btn-lg" href="tel:<%= site.phone.tel %>"><%- icon('phone') %> Call <%= site.phone.display %></a>
+      </div>
+      <ul class="hero-facts reveal d4">
+        <li><%- icon('clock') %> Mon–Sun, two sessions daily</li>
+        <li><%- icon('pin') %> A-86, Vivek Vihar Phase-2</li>
+      </ul>
+    </div>
+    <div class="hero-visual reveal d2">
+      <div class="hero-frame">
+        <%- visual('hero', 'Inside The Smile Lounge Dental Clinic, Vivek Vihar, Delhi', 'hero-img', { eager: true, icon: 'tooth' }) %>
+      </div>
+      <div class="float-card fc1"><%- icon('star') %><div><strong><%= site.justdial.rating %> / 5</strong><small>Justdial rating</small></div></div>
+      <div class="float-card fc2"><%- icon('check') %><div><strong>Orthodontic focus</strong><small>Braces · Invisalign</small></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="marquee" aria-label="Treatments offered">
+  <div class="marquee-track">
+    <% for (let r = 0; r < 2; r++) { %>
+      <% site.services.forEach(function (s) { %><span><%- icon(s.icon) %> <%= s.title %></span><% }) %>
+    <% } %>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Why The Smile Lounge</span>
+      <h2>Complete dental care under one roof</h2>
+      <p>From first braces to missing teeth, you can plan and complete treatment at one clinic.</p>
+    </div>
+    <div class="grid g4">
+      <article class="card reveal"><div class="ico"><%- icon('braces') %></div><h3>Orthodontic speciality</h3><p>Tooth-colour braces, lingual braces and Invisalign aligners.</p></article>
+      <article class="card reveal d1"><div class="ico"><%- icon('implant') %></div><h3>Implants &amp; restorations</h3><p>Dental implants, crowns, bridges and flexible dentures.</p></article>
+      <article class="card reveal d2"><div class="ico"><%- icon('sparkle') %></div><h3>Aesthetic dentistry</h3><p>Smile designing, veneers, laminates and 1-hour teeth whitening.</p></article>
+      <article class="card reveal d3"><div class="ico"><%- icon('clock') %></div><h3>Morning &amp; evening</h3><p>Open Monday to Sunday, <%= site.hours.sessions.join(' and ') %>.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="section tint">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Our treatments</span>
+      <h2>Everything your smile needs</h2>
+    </div>
+    <div class="grid g3">
+      <% site.services.slice(0, 6).forEach(function (s, i) { %>
+        <a class="card svc reveal d<%= i % 3 %>" href="/services#<%= s.id %>">
+          <div class="ico"><%- icon(s.icon) %></div>
+          <h3><%= s.title %></h3>
+          <p><%= s.short %></p>
+          <span class="more">Learn more <%- icon('arrow') %></span>
+        </a>
+      <% }) %>
+    </div>
+    <p class="center reveal"><a class="btn btn-call" href="/services">View all services</a></p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap split">
+    <div class="reveal">
+      <%- visual('doctor-ankur-garg', 'Dr. Ankur Garg, dentist and orthodontist at The Smile Lounge', 'portrait', { icon: 'tooth' }) %>
+    </div>
+    <div class="reveal d1">
+      <span class="eyebrow">Meet your doctor</span>
+      <h2><%= site.doctor.name %></h2>
+      <p class="muted"><%= site.doctor.title %> · <%= site.doctor.degrees %></p>
+      <p>With <strong><%= site.doctor.experience %> years</strong> of experience, Dr. Garg leads treatment at The Smile Lounge, from braces and aligners to implants and smile makeovers.</p>
+      <div class="stats">
+        <div><b class="count" data-to="<%= site.justdial.rating %>" data-dec="1">0</b><span>Justdial rating</span></div>
+        <div><b class="count" data-to="<%= site.justdial.count %>" data-suffix="">0</b><span>Justdial ratings</span></div>
+        <div><b class="count" data-to="19" data-suffix="+">0</b><span>Years experience</span></div>
+      </div>
+      <a class="btn btn-call" href="/about">More about us</a>
+    </div>
+  </div>
+</section>
+
+<section class="section tint">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">How it works</span>
+      <h2>Your visit in four easy steps</h2>
+    </div>
+    <ol class="steps">
+      <li class="reveal"><span>1</span><h3>Message or call</h3><p>Tap Book on WhatsApp or call us to choose a time.</p></li>
+      <li class="reveal d1"><span>2</span><h3>Consultation</h3><p>Dr. Garg examines your teeth and listens to your goals.</p></li>
+      <li class="reveal d2"><span>3</span><h3>Your plan</h3><p>You get clear options for treatment before anything starts.</p></li>
+      <li class="reveal d3"><span>4</span><h3>Treatment</h3><p>Visit us at your scheduled times, morning or evening.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Find us</span>
+      <h2>Reviews &amp; location</h2>
+      <p>Open the live Google listing below to see the latest ratings and patient reviews.</p>
+    </div>
+    <% if (site.reviewsWidgetHtml && site.reviewsWidgetHtml.trim()) { %><div class="reviews-widget reveal"><%- site.reviewsWidgetHtml %></div><% } %>
+    <%- include('partials/mapblock') %>
+  </div>
+</section>
+
+<%- include('partials/footer') %>
