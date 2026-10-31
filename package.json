@@ -1,0 +1,18 @@
+{
+  "name": "the-smile-lounge-website",
+  "version": "1.0.0",
+  "description": "Website for The Smile Lounge Dental Clinic, Vivek Vihar, Delhi",
+  "main": "server.js",
+  "private": true,
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "compression": "^1.7.4",
+    "ejs": "^3.1.10",
+    "express": "^4.21.2"
+  }
+}
